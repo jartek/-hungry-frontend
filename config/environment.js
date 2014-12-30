@@ -20,12 +20,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise'
-  };
-
-  ENV['simple-auth-devise'] = {
-    resourceName: '',
-    serverTokenEndpoint: 'http://localhost:3000/auth/sign_in'
+    authorizer: 'authorizer:custom'
   };
 
   if (environment === 'development') {
