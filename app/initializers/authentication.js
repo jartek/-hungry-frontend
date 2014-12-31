@@ -6,7 +6,6 @@ export function initialize(container) {
   container.register('authorizer:custom', TokenAuthorizer);
 }
 
-
 export default {
   name: 'authentication',
   before: 'simple-auth',
