@@ -19,13 +19,18 @@ export default Base.extend({
     var _this = this;
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.ajax({
-        url:         _this.loginEndpoint,
-        type:        'POST',
-        data:        JSON.stringify({ email: credentials.identification, password: credentials.password }),
+        url: _this.loginEndpoint,
+        type: 'POST',
+        data: JSON.stringify({
+          email: credentials.identification,
+          password: credentials.password
+        }),
         contentType: 'application/json'
       }).then(function(response, xhr, headers) {
         Ember.run(function() {
-          resolve({ token: headers.getResponseHeader('access-token') });
+          resolve({
+            token: headers.getResponseHeader('access-token')
+          });
         });
       }, function(xhr) {
         var response = JSON.parse(xhr.responseText);

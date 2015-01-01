@@ -2,6 +2,9 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'style-src': "'self' 'unsafe-inline'",
+    },
     modulePrefix: 'app',
     environment: environment,
     baseURL: '/',
