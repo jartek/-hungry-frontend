@@ -2,5 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  client: DS.belongsTo('user')
+  user_id: DS.belongsTo('user'),
+  menu: DS.belongsTo('menu'),
 });
